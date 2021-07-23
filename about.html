@@ -23,6 +23,16 @@
 
     <link href="assets/css/style.css" rel="stylesheet">
 
+
+<style>
+    
+    #myCanvasContainer {
+        width: 50%;
+        margin: auto;
+    }
+    
+    </style>
+
 </head>
 
 <body>
@@ -36,11 +46,11 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="active " href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active " href="about.html">About</a></li>
                     <li><a href="portfolio.html">Resume</a></li>
                     <li><a href="portfolio.html">Projects</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -163,35 +173,25 @@
 
                 <div class="skills-content">
 
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">HTML <i class="val">100%</i></span>
-                        </div>
+                    <div id="myCanvasContainer">
+                        <canvas style="width: 450px; height: 300px;" id="myCanvas">
+                            <p>Anything in here will be replaced on browsers that support the canvas element</p>
+                            <ul>
+                                <li><a href="/HTML" >HTML</a></li>
+                                <li><a href="/CSS">CSS</a></li>
+                                <li><a href="/Javascript">Javascript</a></li>
+                                <li><a href="/Dot">Dot Net</a></li>
+                                <li><a href="/PHP">PHP</a></li>
+                                <li><a href="/JQuery">JQuery</a></li>
+                                <li><a href="/Ajax">Ajax</a></li>
+                                <li><a href="/WordPress">WordPress</a></li>
+                            </ul>
+                        </canvas>
                     </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">CSS <i class="val">90%</i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">JavaScript <i class="val">75%</i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">Photoshop <i class="val">55%</i></span>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
         </section><!-- End Our Skills Section -->
-
 
 
     </main><!-- End #main -->
@@ -226,8 +226,25 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
+
+    <script src="assets/TagCanvas-master/tagcanvas.min.js" type="text/javascript"></script>
+
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+                try {
+                    TagCanvas.Start('myCanvas');
+ 
+                    }
+                    catch (e) {
+                        // something went wrong, hide the canvas container
+                        document.getElementById('myCanvasContainer').style.display = 'none';
+                    }
+                };
+
+    </script>
 
 </body>
 
