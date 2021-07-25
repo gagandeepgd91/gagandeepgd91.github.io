@@ -34,7 +34,7 @@
         .split-screen-container {
             height: 500px;
             width: 100%;
-            position: relative; 
+            position: relative;
             background-color: #000;
             overflow-x: scroll;
             color: white;
@@ -50,7 +50,7 @@
 
         }
 
-         
+
         .inner-split-right,
         .inner-split-left {
             position: relative;
@@ -86,7 +86,7 @@
             opacity: 0;
         }
 
-        
+
         #profile-2-text {
             background-color: #1B2C35;
             display: none;
@@ -98,7 +98,7 @@
         }
 
 
-      
+
 
         .see-more {
             display: inline-block;
@@ -119,7 +119,7 @@
             transition: all .3s linear;
         }
 
-        
+
 
         .about-more {
             display: inline-block;
@@ -167,7 +167,7 @@
             width: 70%;
             margin: auto;
             margin-top: 40px;
-        
+
         }
 
         .close {
@@ -198,6 +198,7 @@
             width: 50%;
             margin: auto;
         }
+
     </style>
 
 </head>
@@ -254,17 +255,17 @@
                             <div class="split-screen-right">
                                 <div class="inner-split-left text-center " id="profile-2">
                                     <h4 class="mt-5">Hi, I am gagandeep Kaur</h4>
-                                    <a href="#" class="see-more mt-5" id="open-right">About Me</a>  
-                                    
+                                    <a href="#" class="see-more mt-5" id="open-right">About Me</a>
+
                                     <a href="#" class="about-more mt-5" id="open-right-study">Study</a>
-                                 <a href="#" class="experience-more mt-5" id="open-right-experience">Experience</a>
+                                    <a href="#" class="experience-more mt-5" id="open-right-experience">Experience</a>
 
                                 </div>
                                 <div class="inner-split-right" id="profile-2-text">
                                     <p class="close close-right">X</p>
                                     <div class="text-container">
-                                        
-                                        
+
+
                                     </div>
                                 </div>
                             </div>
@@ -288,7 +289,7 @@
                 <div class="skills-content">
 
                     <div id="myCanvasContainer">
-                        <canvas style="width: 450px; height: 300px;" id="myCanvas">
+                        <canvas style="width: 600px; height: 400px;" id="myCanvas">
                             <p>Anything in here will be replaced on browsers that support the canvas element</p>
                             <ul>
                                 <li><a href="/c">c</a></li>
@@ -353,20 +354,18 @@
     <script src="assets/js/main.js"></script>
 
     <script type="text/javascript">
-
-
         $('#open-right').click(function(e) {
 
             e.preventDefault();
-            
+
             $(".text-container").html('  <h3>A web developer specializing in front and development.</h3>\n\
                         <p class="fst-italic">\n\
                             Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP, OOPS, C, JAVA, JAVASCRIPTS, JQUERY, CSS, MySQL, COMPUTER GRAPHICS. Strong background in project management and customer relations.\n\
-                        </p><ul> <li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
-            
+                        </p><ul> <li> <a href="https://www.linkedin.com/in/gagan-deep-453a95217/" target="_blank" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+
             $('#profile-2-text').show();
-            
-            
+
+
             $('.split-screen-right').velocity({
                 translateX: ["1%"]
             }, 800);
@@ -377,26 +376,26 @@
             $('#profile-2').velocity({
                 width: ["0.1%", '50%']
             }, 800);
- 
+
 
             $(this).velocity({
                 opacity: [0, 1]
             }, 200);
-             
+
         })
 
-        
+
 
 
         $('#open-right-experience').click(function(e) {
 
             e.preventDefault();
-            
-            $(".text-container").html('<ul> <li><h5> Experience</h5><i class="bi bi-check2-circle"></i> <b>Team Leader(Part-time) </b> <br> <em>Acouronne | 2020 – Present </em> <ul><li>Evaluates interface between hardware and software </li><li>Advises customers regarding maintenance of software system </li></ul>    <i class="bi bi-check2-circle"></i> <b>Manager</b> <br> <em>Grey Sea Medicare Pvt. Ltd | 2015-2019</em> <ul><li>Stored, retrieved, and manipulated data</li> <li>Modified existing software to correct errors and optimize efficiency Prepared detailed reports</li><li>API experience</li> <li>Working knowledge of C, C++.</li></ul></li><li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
-            
+
+            $(".text-container").html('<ul> <li><h5> Experience</h5><i class="bi bi-check2-circle"></i> <b>Team Leader(Part-time) </b> <br> <em>Acouronne | 2020 – Present </em> <ul><li>Evaluates interface between hardware and software </li><li>Advises customers regarding maintenance of software system </li></ul>    <i class="bi bi-check2-circle"></i> <b>Manager</b> <br> <em>Grey Sea Medicare Pvt. Ltd | 2015-2019</em> <ul><li>Stored, retrieved, and manipulated data</li> <li>Modified existing software to correct errors and optimize efficiency Prepared detailed reports</li><li>API experience</li> <li>Working knowledge of C, C++.</li></ul></li><li> <a href="https://www.linkedin.com/in/gagan-deep-453a95217/" target="_blank" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+
             $('#profile-2-text').show();
-            
-            
+
+
             $('.split-screen-right').velocity({
                 translateX: ["1%"]
             }, 800);
@@ -407,27 +406,27 @@
             $('#profile-2').velocity({
                 width: ["0.1%", '50%']
             }, 800);
- 
+
 
             $(this).velocity({
                 opacity: [0, 1]
             }, 200);
-             
+
         })
 
-        
+
 
 
         $('#open-right-study').click(function(e) {
 
             e.preventDefault();
-            
+
             $(".text-container").html('<ul><li> <h5> EDUCATIONAL HISTORY </h5> <i class="bi bi-check2-circle"></i> <b>Web Designing and Programming (2019-2021)</b> <br> <em>College CDI, Montreal </em> <br>\n\
                                 <br>  <i class="bi bi-check2-circle"></i> <b>Bachelor of Computer Applications (2009-2012) </b> <br> <em>Punjab Technical University </em> </li> </ul>');
-            
+
             $('#profile-2-text').show();
-            
-            
+
+
             $('.split-screen-right').velocity({
                 translateX: ["1%"]
             }, 800);
@@ -438,19 +437,19 @@
             $('#profile-2').velocity({
                 width: ["0.1%", '50%']
             }, 800);
- 
+
 
             $(this).velocity({
                 opacity: [0, 1]
             }, 200);
-             
+
         })
 
-        
+
 
         $('.close-right').click(function() {
-            
-             
+
+
             $('.split-screen-right').velocity({
                 translateX: 0
             }, 800);
@@ -461,7 +460,7 @@
             $('#profile-2').velocity({
                 width: ['99.9%', "40%"]
             }, 800);
- 
+
 
             $('#open-right').velocity({
                 opacity: [1, 0]
@@ -481,8 +480,8 @@
                 delay: 800,
                 duration: 200
             });
-            
-            
+
+
             $('#profile-2-text').hide();
 
         })
@@ -490,6 +489,14 @@
 
         window.onload = function() {
             try {
+                TagCanvas.textColour = 'black';
+                TagCanvas.outlineColour = '#ff9999';
+                TagCanvas.wheelZoom = true;
+                TagCanvas.zoom = 1.0;
+                TagCanvas.zoomMax = 3.0;
+                TagCanvas.padding = 5;
+                TagCanvas.outlineOffset = 1;
+                TagCanvas.maxBrightness = 5;
                 TagCanvas.Start('myCanvas');
 
             } catch (e) {
@@ -497,9 +504,9 @@
                 document.getElementById('myCanvasContainer').style.display = 'none';
             }
         };
+
     </script>
 
-</body></html>
+</body>
 
-	
-	 
+</html>
