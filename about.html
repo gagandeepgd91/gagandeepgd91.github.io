@@ -21,16 +21,183 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"> </script>
+
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700);
 
 
-<style>
-    
-    #myCanvasContainer {
-        width: 50%;
-        margin: auto;
-    }
-    
+
+        .split-screen-container {
+            height: 500px;
+            width: 100%;
+            position: relative; 
+            background-color: #000;
+            overflow-x: scroll;
+            color: white;
+        }
+
+        .split-screen-left,
+        .split-screen-right {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1e4356;
+
+        }
+
+         
+        .inner-split-right,
+        .inner-split-left {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            float: left;
+
+        }
+
+        .image-1-initial,
+        .image-1-transition,
+        .image-2-initial,
+        .image-2-transition {
+            width: 360px;
+            height: 360px;
+            position: absolute;
+            bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .image-1-initial,
+        .image-2-initial {
+            z-index: 10;
+            opacity: 1;
+        }
+
+        .image-1-transition,
+        .image-2-transition {
+            z-index: 9;
+            opacity: 0;
+        }
+
+        
+        #profile-2-text {
+            background-color: #1B2C35;
+            display: none;
+        }
+
+        img {
+            width: 360px;
+            height: 360px;
+        }
+
+
+      
+
+        .see-more {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid #F67467;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 90px;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'Fira Sans', sans-serif;
+            text-decoration: none;
+            transition: all .3s linear;
+        }
+
+        
+
+        .about-more {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid #F67467;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 200px;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'Fira Sans', sans-serif;
+            text-decoration: none;
+            transition: all .3s linear;
+        }
+
+        .experience-more {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid #F67467;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 300px;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'Fira Sans', sans-serif;
+            text-decoration: none;
+            transition: all .3s linear;
+        }
+
+        .see-more:hover {
+            background-color: #f67467;
+        }
+
+        .text-container {
+            width: 70%;
+            margin: auto;
+            margin-top: 40px;
+        
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            color: #fff;
+            transition: all .2s linear;
+            z-index: 11;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            transform: rotate(1turn);
+        }
+
+        .close-left {
+            left: 1.2rem;
+        }
+
+        .close-right {
+            right: 1.2rem;
+        }
+
+
+
+        #myCanvasContainer {
+            width: 50%;
+            margin: auto;
+        }
     </style>
 
 </head>
@@ -44,13 +211,13 @@
                 <h1 class="text-light"><a href="index.html"><span>Gagandeep Kaur</span></a></h1>
             </div>
 
-            <nav id="navbar" class="navbar"> 
+            <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a class="active " href="about.html">About</a></li>
                     <li><a href="https://docs.google.com/document/d/e/2PACX-1vQRuGPBIu4ACprqcKJsQo6myTI7mLXK44cRU654ZjD2ouBRl9LNPIar48r_V7-LRg/pub" target="_blank">Resume</a></li>
                     <li><a href="portfolio.html">Projects</a></li>
-          <!--li><a href="contact.html">Contact Me</a></li-->
+                    <!--li><a href="contact.html">Contact Me</a></li-->
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -74,89 +241,34 @@
             </div>
         </section><!-- End About Us Section -->
 
-        <!-- ======= About Section ======= -->
         <section class="about" data-aos="fade-up">
             <div class="container">
 
                 <div class="row">
                     <div class="col-lg-4">
-                        <img src="assets/img/about.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/about.jpeg" class="img-fluid" style="height: 500px;" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0">
-                        <h3>A web developer specializing in front and development.</h3>
-                        <p class="fst-italic">
-                            Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP, OOPS, C, JAVA, JAVASCRIPTS, JQUERY, CSS, MySQL, COMPUTER GRAPHICS. Strong background in project management and customer relations.
-                        </p>
-                        <ul>
-                            <li>
-                                <h5> EDUCATIONAL HISTORY
-                                </h5>
+                        <div class="split-screen-container">
 
-                                <i class="bi bi-check2-circle"></i> <b>Web Designing and Programming (2019-2021)</b> <br>
-                                <em>College CDI, Montreal </em>
+                            <div class="split-screen-right">
+                                <div class="inner-split-left text-center " id="profile-2">
+                                    <h4 class="mt-5">Hi, I am gagandeep Kaur</h4>
+                                    <a href="#" class="see-more mt-5" id="open-right">About Me</a>  
+                                    
+                                    <a href="#" class="about-more mt-5" id="open-right-study">Study</a>
+                                 <a href="#" class="experience-more mt-5" id="open-right-experience">Experience</a>
 
-                                <br>
-                                <br>
-
-                                <i class="bi bi-check2-circle"></i> <b>Bachelor of Computer Applications (2009-2012)
-
-                                </b> <br>
-                                <em>Punjab Technical University
-
-                                </em>
-
-
-
-
-                            </li>
-                            <li>
-                                <h5> Experience
-                                </h5>
-
-
-
-
-                                <i class="bi bi-check2-circle"></i> <b>Team Leader(Part-time)
-                                </b> <br>
-                                <em>Acouronne | 2020 – Present </em>
-
-                                <ul>
-                                    <li>Evaluates interface between hardware and software
-
-                                    </li>
-                                    <li>Advises customers regarding maintenance of software system
-
-                                    </li>
-                                </ul>
-
-                                <i class="bi bi-check2-circle"></i> <b>Manager
-
-                                </b> <br>
-                                <em>Grey Sea Medicare Pvt. Ltd | 2015-2019
-
-
-
-                                </em>
-
-                                <ul>
-                                    <li>Stored, retrieved, and manipulated data
-
-                                    </li>
-                                    <li>Modified existing software to correct errors and optimize efficiency Prepared detailed reports
-
-                                    </li>
-
-                                    <li>API experience</li>
-                                    <li>Working knowledge of C, C++.
-
-                                    </li>
-                                </ul>
-
-
-                            </li>
-                            
-                            <li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li>
-                        </ul>
+                                </div>
+                                <div class="inner-split-right" id="profile-2-text">
+                                    <p class="close close-right">X</p>
+                                    <div class="text-container">
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -179,13 +291,13 @@
                         <canvas style="width: 450px; height: 300px;" id="myCanvas">
                             <p>Anything in here will be replaced on browsers that support the canvas element</p>
                             <ul>
-                                <li><a href="/c" >c</a></li>
-                                <li><a href="/c++" >c++</a></li>
-                                <li><a href="/java" >java </a></li>
-                                <li><a href="/computer graphics" >computer graphics</a></li>
-                                <li><a href="/bootstrap" >bootstrap</a></li>
-                                <li><a href="/software development" >software development</a></li>
-                                <li><a href="/artificial intelligence" >artificial intelligence</a></li>
+                                <li><a href="/c">c</a></li>
+                                <li><a href="/c++">c++</a></li>
+                                <li><a href="/java">java </a></li>
+                                <li><a href="/computer graphics">computer graphics</a></li>
+                                <li><a href="/bootstrap">bootstrap</a></li>
+                                <li><a href="/software development">software development</a></li>
+                                <li><a href="/artificial intelligence">artificial intelligence</a></li>
                                 <li><a href="/CSS">CSS</a></li>
                                 <li><a href="/Javascript">Javascript</a></li>
                                 <li><a href="/Dot">Dot Net</a></li>
@@ -241,19 +353,153 @@
     <script src="assets/js/main.js"></script>
 
     <script type="text/javascript">
-        window.onload = function() {
-                try {
-                    TagCanvas.Start('myCanvas');
- 
-                    }
-                    catch (e) {
-                        // something went wrong, hide the canvas container
-                        document.getElementById('myCanvasContainer').style.display = 'none';
-                    }
-                };
 
+
+        $('#open-right').click(function(e) {
+
+            e.preventDefault();
+            
+            $(".text-container").html('  <h3>A web developer specializing in front and development.</h3>\n\
+                        <p class="fst-italic">\n\
+                            Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP, OOPS, C, JAVA, JAVASCRIPTS, JQUERY, CSS, MySQL, COMPUTER GRAPHICS. Strong background in project management and customer relations.\n\
+                        </p><ul> <li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+            
+            $('#profile-2-text').show();
+            
+            
+            $('.split-screen-right').velocity({
+                translateX: ["1%"]
+            }, 800);
+
+            $('#profile-2-text').velocity({
+                width: ["99%", '50%']
+            }, 800);
+            $('#profile-2').velocity({
+                width: ["0.1%", '50%']
+            }, 800);
+ 
+
+            $(this).velocity({
+                opacity: [0, 1]
+            }, 200);
+             
+        })
+
+        
+
+
+        $('#open-right-experience').click(function(e) {
+
+            e.preventDefault();
+            
+            $(".text-container").html('<ul> <li><h5> Experience</h5><i class="bi bi-check2-circle"></i> <b>Team Leader(Part-time) </b> <br> <em>Acouronne | 2020 – Present </em> <ul><li>Evaluates interface between hardware and software </li><li>Advises customers regarding maintenance of software system </li></ul>    <i class="bi bi-check2-circle"></i> <b>Manager</b> <br> <em>Grey Sea Medicare Pvt. Ltd | 2015-2019</em> <ul><li>Stored, retrieved, and manipulated data</li> <li>Modified existing software to correct errors and optimize efficiency Prepared detailed reports</li><li>API experience</li> <li>Working knowledge of C, C++.</li></ul></li><li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+            
+            $('#profile-2-text').show();
+            
+            
+            $('.split-screen-right').velocity({
+                translateX: ["1%"]
+            }, 800);
+
+            $('#profile-2-text').velocity({
+                width: ["99%", '50%']
+            }, 800);
+            $('#profile-2').velocity({
+                width: ["0.1%", '50%']
+            }, 800);
+ 
+
+            $(this).velocity({
+                opacity: [0, 1]
+            }, 200);
+             
+        })
+
+        
+
+
+        $('#open-right-study').click(function(e) {
+
+            e.preventDefault();
+            
+            $(".text-container").html('<ul><li> <h5> EDUCATIONAL HISTORY </h5> <i class="bi bi-check2-circle"></i> <b>Web Designing and Programming (2019-2021)</b> <br> <em>College CDI, Montreal </em> <br>\n\
+                                <br>  <i class="bi bi-check2-circle"></i> <b>Bachelor of Computer Applications (2009-2012) </b> <br> <em>Punjab Technical University </em> </li> </ul>');
+            
+            $('#profile-2-text').show();
+            
+            
+            $('.split-screen-right').velocity({
+                translateX: ["1%"]
+            }, 800);
+
+            $('#profile-2-text').velocity({
+                width: ["99%", '50%']
+            }, 800);
+            $('#profile-2').velocity({
+                width: ["0.1%", '50%']
+            }, 800);
+ 
+
+            $(this).velocity({
+                opacity: [0, 1]
+            }, 200);
+             
+        })
+
+        
+
+        $('.close-right').click(function() {
+            
+             
+            $('.split-screen-right').velocity({
+                translateX: 0
+            }, 800);
+
+            $('#profile-2-text').velocity({
+                width: ['0.1%', "60%"]
+            }, 800);
+            $('#profile-2').velocity({
+                width: ['99.9%', "40%"]
+            }, 800);
+ 
+
+            $('#open-right').velocity({
+                opacity: [1, 0]
+            }, {
+                delay: 800,
+                duration: 200
+            });
+            $('#open-right-study').velocity({
+                opacity: [1, 0]
+            }, {
+                delay: 800,
+                duration: 200
+            });
+            $('#open-right-experience').velocity({
+                opacity: [1, 0]
+            }, {
+                delay: 800,
+                duration: 200
+            });
+            
+            
+            $('#profile-2-text').hide();
+
+        })
+
+
+        window.onload = function() {
+            try {
+                TagCanvas.Start('myCanvas');
+
+            } catch (e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('myCanvasContainer').style.display = 'none';
+            }
+        };
     </script>
 
-</body>
+</body></html>
 
-</html>
+	
+	 

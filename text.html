@@ -34,9 +34,10 @@
         .split-screen-container {
             height: 500px;
             width: 100%;
-            position: relative;
-            top: 50px;
+            position: relative; 
             background-color: #000;
+            overflow-x: scroll;
+            color: white;
         }
 
         .split-screen-left,
@@ -45,7 +46,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: #f34837;
+            background-color: #1e4356;
 
         }
 
@@ -85,7 +86,7 @@
             opacity: 0;
         }
 
-        #profile-1-text,
+        
         #profile-2-text {
             background-color: #1B2C35;
             display: none;
@@ -97,36 +98,7 @@
         }
 
 
-        h1 {
-            text-align: center;
-            position: relative;
-            top: 40px;
-            font-weight: 400;
-            color: #fff;
-            font-family: 'Fira Sans', sans-serif;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            color: #385B6D;
-            text-align: center;
-            font-weight: 400;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        p {
-            color: #fff;
-            font-size: 1rem;
-            line-height: 1.45;
-            font-weight: 300;
-            margin: 2rem 0;
-        }
+      
 
         .see-more {
             display: inline-block;
@@ -147,14 +119,55 @@
             transition: all .3s linear;
         }
 
+        
+
+        .about-more {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid #F67467;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 200px;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'Fira Sans', sans-serif;
+            text-decoration: none;
+            transition: all .3s linear;
+        }
+
+        .experience-more {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid #F67467;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 300px;
+            line-height: 40px;
+            color: #fff;
+            font-family: 'Fira Sans', sans-serif;
+            text-decoration: none;
+            transition: all .3s linear;
+        }
+
         .see-more:hover {
             background-color: #f67467;
         }
 
         .text-container {
-            max-width: 40rem;
-            margin: 3rem auto;
-
+            width: 70%;
+            margin: auto;
+            margin-top: 40px;
+        
         }
 
         .close {
@@ -233,27 +246,25 @@
 
                 <div class="row">
                     <div class="col-lg-4">
-                        <img src="assets/img/about.jpeg" class="img-fluid" alt="">
+                        <img src="assets/img/about.jpeg" class="img-fluid" style="height: 500px;" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0">
                         <div class="split-screen-container">
 
                             <div class="split-screen-right">
-                                <div class="inner-split-left" id="profile-2">
-                                    <h1>Profile Two</h1>
-                                    <a href="#" class="see-more" id="open-right">See More</a>
+                                <div class="inner-split-left text-center " id="profile-2">
+                                    <h4 class="mt-5">Hi, I am gagandeep Kaur</h4>
+                                    <a href="#" class="see-more mt-5" id="open-right">About Me</a>  
+                                    
+                                    <a href="#" class="about-more mt-5" id="open-right-study">Study</a>
+                                 <a href="#" class="experience-more mt-5" id="open-right-experience">Experience</a>
 
                                 </div>
                                 <div class="inner-split-right" id="profile-2-text">
                                     <p class="close close-right">X</p>
                                     <div class="text-container">
-                                        <h2>Hi, my name is...</h2>
-                                        <p>
-                                            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                                        </p>
-                                        <p>
-                                            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
-                                        </p>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -342,122 +353,137 @@
     <script src="assets/js/main.js"></script>
 
     <script type="text/javascript">
-        $('#open-left').click(function(e) {
-            e.preventDefault();
-            $('.split-screen-left').velocity({
-                translateX: ["50%"]
-            }, 800);
-            $('.split-screen-right').velocity({
-                translateX: ["50%"]
-            }, 800);
 
-            $('#profile-1-text').velocity({
-                width: ["60%", '50%']
-            }, 800);
-            $('#profile-1').velocity({
-                width: ["40%", '50%']
-            }, 800);
-
-            $('.image-1-initial').velocity({
-                opacity: [0, 1]
-            }, 800);
-            $('.image-1-transition').velocity({
-                opacity: [1, 0]
-            }, 800);
-
-            $(this).velocity({
-                opacity: [0, 1]
-            }, 200);
-        })
 
         $('#open-right').click(function(e) {
-            alert("ss");
+
             e.preventDefault();
-            $('.split-screen-left').velocity({
-                translateX: ["-50%"]
-            }, 800);
+            
+            $(".text-container").html('  <h3>A web developer specializing in front and development.</h3>\n\
+                        <p class="fst-italic">\n\
+                            Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including HTML5, PHP, OOPS, C, JAVA, JAVASCRIPTS, JQUERY, CSS, MySQL, COMPUTER GRAPHICS. Strong background in project management and customer relations.\n\
+                        </p><ul> <li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+            
+            $('#profile-2-text').show();
+            
+            
             $('.split-screen-right').velocity({
-                translateX: ["-50%"]
+                translateX: ["1%"]
             }, 800);
 
             $('#profile-2-text').velocity({
-                width: ["60%", '50%']
+                width: ["99%", '50%']
             }, 800);
             $('#profile-2').velocity({
-                width: ["40%", '50%']
+                width: ["0.1%", '50%']
             }, 800);
-
-            $('.image-2-initial').velocity({
-                opacity: [0, 1]
-            }, 800);
-            $('.image-2-transition').velocity({
-                opacity: [1, 0]
-            }, 800);
+ 
 
             $(this).velocity({
                 opacity: [0, 1]
             }, 200);
+             
         })
 
-        $('.close-left').click(function() {
-            $('.split-screen-left').velocity({
-                translateX: 0
-            }, 800);
+        
+
+
+        $('#open-right-experience').click(function(e) {
+
+            e.preventDefault();
+            
+            $(".text-container").html('<ul> <li><h5> Experience</h5><i class="bi bi-check2-circle"></i> <b>Team Leader(Part-time) </b> <br> <em>Acouronne | 2020 – Present </em> <ul><li>Evaluates interface between hardware and software </li><li>Advises customers regarding maintenance of software system </li></ul>    <i class="bi bi-check2-circle"></i> <b>Manager</b> <br> <em>Grey Sea Medicare Pvt. Ltd | 2015-2019</em> <ul><li>Stored, retrieved, and manipulated data</li> <li>Modified existing software to correct errors and optimize efficiency Prepared detailed reports</li><li>API experience</li> <li>Working knowledge of C, C++.</li></ul></li><li> <a href="" class="btn btn-primary"> <i class="bi bi-linkedin"></i> Linkedin Profile</a></li></ul>');
+            
+            $('#profile-2-text').show();
+            
+            
             $('.split-screen-right').velocity({
-                translateX: 0
+                translateX: ["1%"]
             }, 800);
 
-            $('#profile-1-text').velocity({
-                width: ['50%', "60%"]
+            $('#profile-2-text').velocity({
+                width: ["99%", '50%']
             }, 800);
-            $('#profile-1').velocity({
-                width: ['50%', "40%"]
+            $('#profile-2').velocity({
+                width: ["0.1%", '50%']
             }, 800);
+ 
 
-            $('.image-1-initial').velocity({
-                opacity: [1, 0]
-            }, 800);
-            $('.image-1-transition').velocity({
+            $(this).velocity({
                 opacity: [0, 1]
+            }, 200);
+             
+        })
+
+        
+
+
+        $('#open-right-study').click(function(e) {
+
+            e.preventDefault();
+            
+            $(".text-container").html('<ul><li> <h5> EDUCATIONAL HISTORY </h5> <i class="bi bi-check2-circle"></i> <b>Web Designing and Programming (2019-2021)</b> <br> <em>College CDI, Montreal </em> <br>\n\
+                                <br>  <i class="bi bi-check2-circle"></i> <b>Bachelor of Computer Applications (2009-2012) </b> <br> <em>Punjab Technical University </em> </li> </ul>');
+            
+            $('#profile-2-text').show();
+            
+            
+            $('.split-screen-right').velocity({
+                translateX: ["1%"]
             }, 800);
 
-            $('#open-left').velocity({
-                opacity: [1, 0]
-            }, {
-                delay: 800,
-                duration: 200
-            })
+            $('#profile-2-text').velocity({
+                width: ["99%", '50%']
+            }, 800);
+            $('#profile-2').velocity({
+                width: ["0.1%", '50%']
+            }, 800);
+ 
 
+            $(this).velocity({
+                opacity: [0, 1]
+            }, 200);
+             
         })
+
+        
 
         $('.close-right').click(function() {
-            $('.split-screen-left').velocity({
-                translateX: 0
-            }, 800);
+            
+             
             $('.split-screen-right').velocity({
                 translateX: 0
             }, 800);
 
             $('#profile-2-text').velocity({
-                width: ['50%', "60%"]
+                width: ['0.1%', "60%"]
             }, 800);
             $('#profile-2').velocity({
-                width: ['50%', "40%"]
+                width: ['99.9%', "40%"]
             }, 800);
-
-            $('.image-2-initial').velocity({
-                opacity: [1, 0]
-            }, 800);
-            $('.image-2-transition').velocity({
-                opacity: [0, 1]
-            }, 800);
+ 
 
             $('#open-right').velocity({
                 opacity: [1, 0]
             }, {
                 delay: 800,
                 duration: 200
-            })
+            });
+            $('#open-right-study').velocity({
+                opacity: [1, 0]
+            }, {
+                delay: 800,
+                duration: 200
+            });
+            $('#open-right-experience').velocity({
+                opacity: [1, 0]
+            }, {
+                delay: 800,
+                duration: 200
+            });
+            
+            
+            $('#profile-2-text').hide();
 
         })
 
